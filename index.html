@@ -12,13 +12,24 @@
 
 <body>
     <div id="root"></div>
-    <script src="https://code.jquery.com/jquery.3.2.1.min.js"></script>
-    <script src="assets/js/components/dashboard.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/js/components/header.js"></script>
     <script src="assets/js/components/login.js"></script>
+    <script src="assets/js/components/dashboard.js"></script>
     <script src="assets/js/utils/facebook.js"></script>
     <script src="assets/js/index.js"></script>
-    <script></script>
+    <script>
+        (function (thisdocument, scriptelement, id) {
+            var js,
+                fjs = thisdocument.getElementsByTagName(scriptelement)[0];
+            if (thisdocument.getElementById(id)) return;
+
+            js = thisdocument.createElement(scriptelement);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 </body>
 
 </html>
